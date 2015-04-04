@@ -1,0 +1,45 @@
+panes>5
+title1>La probabilité de défaut simplifiée
+
+Nous allons maintenant vous présenter une autre méthode plus simple pour simuler la distribution de défaut qui se base principalement sur des données historiques d’entreprises.
+ 
+Ainsi, on dispose préalablement de données macroéconomiques de différentes entreprises synthétisées par leurs ratios au cours de plusieurs années. 
+
+next>
+La probabilité de défaut est modélisée comme une fonction logistique telle que : 
+
+image>4/pd.jpg
+
+Avec:
+- PD(j,t) la probabilité conditionnelle de défaut de la société j pour l’année t.
+- Y(j,t) est obtenu par le multifactor modèle, c’est à dire défini comme le produit scalaire de deux vecteurs lignes X et b (fonction somme produit sous Excel).  
+
+next>
+
+Le vecteur ligne X correspond aux données (par exemple : CAP Circulant, Res/TB, EBUT, Capi, STA, Intercept=1). 
+
+Le vecteur b, quant à lui, correspond à un paramètre d’équation à déterminer dans le solveur grâce au maximum de vraisemblance. (au départ il est n’est pas initialisé)
+
+image>4/vb.jpg
+
+image>4/yj4.jpg
+
+v correspond à l’erreur sur le terme de la distribution normale
+
+next>
+On réalise donc le produit scalaire de ces deux vecteurs X et b, ce qui correspond au multifactor modèle, afin de déterminer Y, auquel on applique la fonction logistique PD. 
+
+Pour prendre en compte si une entreprise a fait défaut dans le passé, on définit la vraisemblance telle que : 
+
+image>4/s.jpg
+
+avec défaut qui vaut 0 si l’entreprise j n’a pas fait défaut au cours de l’année t 
+et 1 si elle a fait défaut.
+
+next>
+On calcule ainsi la vraisemblance pour chaque entreprise chaque année (chaque ligne)
+Puis, le vecteur b est déterminé en maximisant la somme de chacune de ces vraisemblances. 
+
+On obtient ainsi le vecteur b et les probabilités de défaut PD qui en découle pour chaque société j à chaque période t. 
+
+image>4/pds.jpg

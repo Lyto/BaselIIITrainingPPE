@@ -32,6 +32,7 @@ public class Profil extends GridPane {
 		this.setPrefWidth(935);
 		this.setAlignment(Pos.TOP_CENTER);
 		this.setVgap(25);
+		this.setId("background");
 
 		Label user = new Label(connexion.getName());
 		user.setStyle("-fx-font-size: 300%; -fx-font-weight: bold;");

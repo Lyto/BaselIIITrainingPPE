@@ -29,7 +29,8 @@ public class Formation extends GridPane {
 		this.setAlignment(Pos.CENTER);
 		this.setVgap(20);
 		this.setHgap(25);
-
+		this.setId("background");
+		
 		URL url = this.getClass().getResource("/resources/" + path);
 
 		int row = 0;
@@ -62,12 +63,21 @@ public class Formation extends GridPane {
 
 						Label title = new Label(texte[1]);
 						title.setId("form_title2");
+						title.setWrapText(true);
 						panes[i].add(title, 0, row_pan, 2, 1);
 						row_pan++;
 
+					} else if (texte[0].equals("title3")) {
+						
+						Label title = new Label(texte[1]);
+						title.setId("form_title3");
+						title.setWrapText(true);
+						panes[i].add(title, 0, row_pan, 2, 1);
+						row_pan++;
+						
 					} else if (texte[0].equals("image")) {
-
-						String s = "/resources/chapitre1/" + texte[1];
+					
+						String s = "/resources/chapitre" + texte[1];
 						URL u = this.getClass().getResource(s);
 						ImageView image = new ImageView(u.toString());
 						GridPane.setHalignment(image, HPos.CENTER);
@@ -82,7 +92,6 @@ public class Formation extends GridPane {
 					} else if (texte[0].equals("panes")) {
 
 						nb_panes = Integer.parseInt(texte[1]);
-						System.out.println(texte[1]);
 						panes = new GridPane[nb_panes];
 
 						for (int a = 0; a < nb_panes; a++) {
@@ -98,6 +107,7 @@ public class Formation extends GridPane {
 						Label label = new Label(texte[0]);
 						label.setPrefWidth(800);
 						label.setWrapText(true);
+						label.setId("form_label");
 						panes[i].add(label, 0, row_pan, 2, 1);
 						row_pan++;
 

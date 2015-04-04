@@ -25,6 +25,7 @@ public class Accueil extends GridPane {
 		this.setAlignment(Pos.CENTER);
 		this.setHgap(30);
 		this.setVgap(30);
+		this.setId("background");
 
 		Label welcome = new Label("Bienvenue " + connexion.getName() + " !");
 		welcome.setId("title");

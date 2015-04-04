@@ -1,3 +1,7 @@
+#background {
+	-fx-background-image: url("background_panel.jpg")
+}
+
 #title {
 	-fx-font-size: 200%;
 	-fx-font-weight: bold;
@@ -88,14 +92,21 @@
 
 
 #form_title1 {
-	-fx-font-size: 250%;
+	-fx-font-size: 350%;
 	-fx-font-weight: bold;
 	-fx-label-padding: 0 0 10 0;
 }
 
 #form_title2 {
+	-fx-font-size: 250%;
+	-fx-font-weight: bold;
+	-fx-label-padding: 0 0 0 50;
+}
+
+#form_title3 {
 	-fx-font-size: 150%;
 	-fx-font-weight: bold;
+	-fx-underline: true;
 	-fx-label-padding: 0 0 0 50;
 }
 
@@ -107,4 +118,7 @@
 	-fx-padding: 30 30 30 30;
 }
 
+#form_label {
+	-fx-font-size: 130%;
+}
 

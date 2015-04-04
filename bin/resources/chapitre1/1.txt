@@ -1,10 +1,8 @@
 panes>3
-title1>Introduction
+title1>Introduction au CVA
 title2>Qu'est-ce que Bâle?
  
 Bâle est dans un premier temps une ville Suisse dont la traduction anglaise est Basel.
-
-image>bale.jpg
 
 C’est donc dans cette ville que les accords de Bâle sont signés par ce qu’on appelle le Comité de Bâle.
 

@@ -1,0 +1,32 @@
+panes>3
+title1>Probabilité de défaut
+
+Partons de la formule de la CVA de Bâle 3 (Partie 1–II–A-1):
+
+image>3/cva.jpg
+
+Intéressons de plus près au terme probabiliste:
+
+image>3/max.jpg
+
+Nous verrons comment ce terme approxime la probabilité marginale, implicite dans le marché, d’un défaut survenant entre les dates ti-1 et ti.
+
+next>
+title2>Notations & définition
+
+image>3/max2.jpg
+
+Remarque : On prend le maximum entre 0 et la probabilité de défaut calculée pour obtenir une probabilité supérieure à 0.
+ 
+- La date ti représente l’intervalle de temps pour la ième réévaluation à partir de t0 =0.
+ 
+- si est la prime de risque de la contrepartie en ti utilisée pour calculer la CVA de la contrepartie. Il s’agit en réalité de la prime CDS payée par l’établissement bancaire dans le but de se couvrir d’un éventuel défaut de la contrepartie. Nous vous expliquerons cet aspect plus en détails dans le paragraphe concernant les CDS.
+
+- Introduisons la probabilité de défaut cumulative calculée à la date t, que l’on notera F(t). Il s’agit de la probabilité de défaut comprise entre la date 0 (l’instant où l’on calcule cette probabilité) et la date t. On fera l’hypothèse que pendant cette période, la contrepartie n’a pas fait défaut.
+
+next>
+On pourra calculer la probabilité de défaut marginale : q(t1,t2), la probabilité de défaut entre deux dates futures :
+
+image>3/q.jpg
+
+image>3/pdc.jpg

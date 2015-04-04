@@ -1,0 +1,183 @@
+panes>18
+title1>Probabilité de défaut
+title2>Estimation de la probabilité dans une hypothèse de neutralité à l’égard du risque
+
+La probabilité de défaut neutre à l’égard du risque (aussi dénommée probabilité de défaut implicite dans le marché) est corrélée aux spreads de crédits.
+ 
+title3>A- Spreads de crédit et probabilité de défaut neutre à l’égard du risque
+
+Les spreads de crédits peuvent se définir comme une différence de rendement entre une dette considérée comme sans risque émise par l’Etat et une dette émise par une entreprise.
+
+Il correspond au supplément de rendement requis par les investisseurs pour couvrir leur risque de perte.
+
+Ce différentiel de rendement a pour but de rémunérer le risque afin que l’espérance de rendement d’un titre risqué soit le même que celle d’un titre non risqué sous l’hypothèse que les investisseurs sont indifférents au risque (soit neutre à l’égard du risque). Sous cette hypothèse, le prix que l’investisseur paiera (spread) sera égale à l’espérance de gain de son investissement.
+
+next>
+Il existe plusieurs façon de définir et de calculer le spread.
+
+Les méthodes les plus communes pour définir un spread sont :
+
+- à partir des primes d’un seul et même contrat CDS
+- à partir des spreads de swaps de portefeuille
+- de la comparaison entre les valeurs de portefeuille et les courbes de taux de référence tel que le LIBOR
+- de l’utilisation de “proxy or mapping model”
+
+next>
+Exemple 1 :
+	
+Prenons un exemple simple afin de mieux comprendre comment les probabilités de risque neutre sont corrélées aux spreads.
+
+Soit un actif, où l’investisseur à 50% de chance de perdre son investissement (défaut de la contrepartie) et 50% de doubler son investissement (100K €), en considérant des probabilités d’occurrence.
+
+image>3/ex1.jpg
+
+next>
+On peut alors calculer son espérance de gain à partir des probabilités d’occurrence:
+
+image>3/probas.jpg
+
+Son espérance de gain sera alors de : (-100K)*50% + (100K)*50% = 0€.
+
+next>
+Cependant, l’investisseur payera une prime (un spread de 10K€) pour se couvrir du risque de défaut.
+
+Si l’investisseur est neutre à l’égard du risque, alors il y a égalité entre le prix de l’investissement (la prime) et son espérance de gain.
+
+Ainsi, pour considérer un risque neutre, on ajustera les probabilités de défaut afin de satisfaire cette égalité:
+
+Espérance de gain = (-100K)*45% + (100K)*55%  = 10K€ = Prime
+
+image>3/probas2.jpg
+
+On obtient ainsi des probabilités risque neutre.
+
+next>
+Prenons un exemple afin de mieux comprendre comment le prix des actifs risqués évoluent en fonction des probabilités risque neutre.
+
+On sait que le prix d’un actif est la somme des valeurs actualisées des flux futurs qu’il génère.
+Pour un actif non risqué, les flux sont connues comme le spread reste nul.
+Cependant pour un actif risqué, les flux qu’il génère fluctuent. Il est donc nécessaire d’approximer ces flux grâce aux probabilités de défaut.
+
+next>
+Prenons deux actifs de même maturité :
+- Soit l’actif 1, non risqué, qui rapporte 1 euro quelque soit l’état de la nature (A ou B).
+
+image>3/actif1.jpg
+
+- Et soit l’actif 2, risqué, qui rapporte 2 euros pour l’état A et 3 euros pour l’état B. 
+
+image>3/actif2.jpg
+
+next>
+Posons, VA et VB, les valeurs actuelles d’1 euro respectivement dans l’état A et B.
+
+Et donc, VA+VB la valeur actuelle de 1€ dans 1 an quelque soit l’état de la nature. Il s’agit du prix d’un actif sans risque à un an de nominale 1€.
+
+On peut en déduire une relation entre VA, VB (les flux futurs des deux actifs) et la valeur actuelle (le prix) des actifs:
+
+next>
+(Actif 1 non risqué) : 1VA + 1VB = 0,95
+
+image>3/ac1.jpg
+
+(Actif 2 risqué) : 2VA + 3VB = 2,4
+
+image>3/ac2.jpg
+
+d’où VA=0,45 et VB=0,5.
+
+next>
+Introduisons qi : une probabilité telle que :
+
+image>3/qi.jpg
+
+image>3/ccl.jpg
+
+next>
+Soit R, le taux de rendement de l’actif sans risque :
+
+Dans notre exemple,
+Valeur future = 1
+Valeur actuelle = VA+VB = 0,95
+
+Or,
+image>3/va.jpg
+
+Donc:
+image>3/vavb.jpg
+
+next>
+Ainsi, alors on considérant que le rendement de l’actif sans risque est le même que le rendement de l’actif risqué:
+
+image>3/r1.jpg
+
+image>3/r2.jpg
+
+next>
+Si les investisseurs sont risque neutre, le taux de rendement de chaque actif est égale au taux sans risque et le prix d’un titre risqué est égale à la valeur actualisé de l’espérance de gain.
+
+image>3/vt.jpg
+
+Dans notre exemple: Eq(Vt+1) = qA+qB pour l’actif 1 et Eq(Vt+1)=2qA+3qB pour l’actif 2.
+
+C’est pourquoi on appelle qA et qB les probabilités risque neutre. Ce ne sont pas les probabilités d’occurrence des deux états de la nature. Ce sont les probabilités de défaut prenant en compte une indifférence de l’investisseur par rapport au risque.
+
+Ainsi pour évaluer des actifs risqués il est nécessaire d’ajuster les probabilités historiques de défauts et les taux de recouvrement pour obtenir des probabilités risque neutre.
+
+next>
+title3>B- Méthode simple de calcul de la probabilité de défaut
+
+Prenons l’exemple d’une contrepartie ayant une probabilité de défaut de 10% par an.
+Calculons les probabilités de défaut de cette contrepartie aux autres dates.
+ 
+On sait que la probabilité de défaut lors de la première année est de 10%.
+ 
+On calcule la probabilité de défaut de l’année n en multipliant la probabilité de défaut par ans, par les probabilité de « non défaut » des années n-1, n-2, … et 1.
+ 
+Donc la probabilité de défaut de la seconde année est égale à :
+10%*90% = 9%
+De même, on peut calculer la probabilité de défaut de la troisième année :
+10%*90%*91% = 8,19%
+ 
+On en déduit la probabilité de défaut cumulative sur deux ans : 10% + 9% = 19%
+
+image>3/b.jpg
+
+next>
+title3>C- Modélisation mathématique
+
+On peut modéliser la probabilité de défaut cumulative par une loi de Poisson tel que :
+
+image>3/ft.jpg
+
+h : hazard rate of default. Il s’agit de la condition de la probabilité de défaut sur une période infinitésimale.
+ 
+En reprenant l’exemple de la méthode . On retrouve 19% en prenant h=(10,54%)6 et t=2 ans.
+
+next>
+En faisant l’hypothèse que les spreads de crédit sont les mêmes pour toutes les maturités et que les primes de CDS sont payés continuellement. On peut définir h tel que :
+
+image>3/h.jpg
+
+Donc:
+image>3/ft2.jpg
+
+next>
+Pourquoi la probabilité de défaut dépend du LGD ?
+ 
+Considérons une contrepartie qui risque de faire défaut avec une probabilité de 2% mais dont le taux de recouvrement serait de 50%. La perte espérée serait alors de 1% (=2%*(100%-50%)).
+
+Dans le cas où l’on ne prends pas en compte le LGD (en prenant ici R=0), on obtiendra la même perte espérée avec une probabilité de défaut moindre. En effect, 1%=1%*(100%-0%)
+ 
+Il est donc nécessaire de prendre en compte le taux de recouvrement dans le calcul de probabilité de défaut. En effet, un taux de recouvrement élevé (favorable au souscripteur : l’établissement bancaire) doit être compensé par une probabilité de défaut élevée (défavorable pour l’établissement bancaire).
+
+En pratique, on fixe le taux R pour ensuite déterminer la probabilité de défaut cumulative F(t).
+
+next>
+On peut ainsi calculer la probabilité de défaut marginale entre la date ti-1 et ti:
+
+image>3/q1.jpg
+
+image>3/q2.jpg
+
+Il s’agit de l’approximation utilisée dans les textes de Bâle 3 afin de définir la CVA (cf formule donnée en début de formation). Il ne s’agit que d’une approximation car cette formule ne prend pas en compte les variations de la courbe de crédit avant la date ti-1. Plus les variations de cette courbe sont fortes plus l’approximation est fausse.

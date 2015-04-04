@@ -1,4 +1,5 @@
 panes>4
+title1>Introduction au CVA
 title2>Qu’est ce que la CVA?
 
 Comme nous l’avons vu dans la partie précédente, la CVA fait partie intégrante du risque de contrepartie. 
@@ -18,11 +19,11 @@ Passons à la définition du CVA:
 
 Le CVA (en français l’Ajustement de valeur de crédit et en anglais Credit Value Adjustment) est un indice pour prendre en compte la perte attendue en cas de défaut de la contrepartie.  Il s’assimile, au niveau d’un portefeuille ou d’un contrat, comme la différence entre la valorisation sans risque  et la valorisation qui tient compte de la probabilité de défaut.
 Par définition on a donc:
-					CVA= P – p
+					CVA= P – pi
 
 Avec 
 - P: Valeur de marché du portefeuille qui ne tient pas compte du risque de défaut 
-- p: Valeur de marché du portefeuille prenant en compte le risque de défaut
+- pi: Valeur de marché du portefeuille prenant en compte le risque de défaut
 
 next>
 title2>Qu’est ce que la CVA?
