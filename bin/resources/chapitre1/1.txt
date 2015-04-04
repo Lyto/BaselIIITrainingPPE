@@ -1,0 +1,39 @@
+panes>3
+title1>Introduction
+title2>Qu'est-ce que Bâle?
+ 
+Bâle est dans un premier temps une ville Suisse dont la traduction anglaise est Basel.
+
+image>bale.jpg
+
+C’est donc dans cette ville que les accords de Bâle sont signés par ce qu’on appelle le Comité de Bâle.
+
+Le Comité de Bâle est un forum où sont traités régulièrement (quatre fois par an) les sujets liés à la supervision bancaire.
+
+Les accords de Bâle sont donc des accords de réglementation bancaire. Ils visent à renforcer le système financier en assurant un niveau minimum de fonds propres afin de garantir la solidité financière.
+
+Un peu d’histoire: Les premiers accords de Bâle furent signés en 1988, les seconds en 2004 et, enfin, les derniers en date et donc les troisièmes ont été publiés le 16 décembre 2010 suite à la crise des Subprimes de 2007.
+
+next>
+title2>Rappel sur la crise de 2007
+
+« Subprimes » ça veut dire quoi?
+
+Les crédits « subprimes » sont des prêts immobiliers accordés à des ménages américains aux revenus modestes. Ces derniers sont des emprunteurs qui présente un risque de défaillance supérieur à la normale.
+En 2001 les emprunteurs de crédits subprimes représentaient 9% des emprunteurs immobiliers contre 20% en 2006. Le marché des subprimes est donc passé de 94 milliards de dollars à 685 milliards.
+
+La crise est donc déclenchée au deuxième semestre 2006 avec le krach des prêts immobiliers car les emprunteurs de crédits subprimes n’étaient plus capable de rembourser.
+
+next>
+title2>Qu’est ce que Bâle? (Suite)
+
+Revenons maintenant aux accords de Bâle!
+
+Il est important de savoir que les réglementations de Bâle reposent sur 3 piliers:
+- Pilier 1 : L’exigence de fonds propres
+- Pilier 2 : La procédure de surveillance de la gestion des fonds propres
+- Pilier 3 : La discipline de marché
+
+Le sujet de notre formation, le « Credit Value Adjustment » dont le sigle est « CVA », se trouve dans le pilier 1 au moment où est abordé le risque de contrepartie.
+
+Nous passons donc au deuxième point de cette introduction: Qu’est ce que la CVA?

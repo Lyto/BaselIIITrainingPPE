@@ -1,0 +1,27 @@
+.root {
+	-fx-background-image: url("Inscription.jpg")
+}
+
+#title {
+	-fx-font-size: 200%;
+	-fx-font-weight: bold;
+	-fx-label-padding: 0 0 10 0;
+}
+
+
+#subtitle {
+	-fx-font-size: 120%;
+	-fx-font-weight: bold;
+}
+
+#button {
+	-fx-font-size: 150%;
+	-fx-font-weight: bold;
+	-fx-padding: 5 55 5 55;
+}
+
+#warning {
+	-fx-font-size: 120%;
+	-fx-text-fill: #ee2525;
+	-fx-font-weight: bold;
+}

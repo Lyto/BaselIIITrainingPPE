@@ -1,0 +1,31 @@
+
+.root {
+	/*-fx-background-color: #f4f4f4;*/
+	-fx-background-image: url("background.jpg")
+}
+
+#welcome {
+	-fx-font-weight: bold;
+	-fx-font-size: 200%;
+}
+
+#username {
+	-fx-label-padding: 0 0 0 50;	
+	-fx-font-size: 120%;
+}
+
+#password {
+	-fx-label-padding: 0 0 0 30;	
+	-fx-font-size: 120%;
+}
+
+.button {
+	-fx-padding: 3 30 3 30;
+	-fx-font-size: 120%;
+}
+
+#inscription {
+	-fx-label-padding: 0 0 0 20;
+	-fx-font-size: 120%;
+	-fx-font-weight: bold;
+}

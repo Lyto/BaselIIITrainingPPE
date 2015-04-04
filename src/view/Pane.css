@@ -1,0 +1,110 @@
+#title {
+	-fx-font-size: 200%;
+	-fx-font-weight: bold;
+}
+
+#section {
+	-fx-font-size: 200%;
+	-fx-font-weight: bold;
+}
+
+#title1 {
+	-fx-font-size: 120%;
+	-fx-font-weight: bold;
+	-fx-label-padding: 10 0 0 40;
+}
+
+#date {
+	-fx-label-padding: 10 0 0 20;
+}
+
+#desc {
+	-fx-label-padding: 0 0 10 60;
+}
+
+#hyperlink {
+	-fx-label-padding: 0 0 5 740;
+}
+
+#pane {
+	-fx-border-color: #000000;
+	-fx-background-color: #bcbcbc;
+	-fx-border-radius: 10px;
+	-fx-background-radius: 10px;
+}
+
+#question {
+	-fx-font-size: 120%;
+	-fx-label-padding: 15 0 15 25;
+	-fx-font-weight: bold;
+}
+
+#reponse {
+	-fx-padding: 0 0 15 50;
+}
+
+#valider {
+	-fx-font-size: 120%;
+	-fx-font-weight: bold;
+	-fx-padding: 5 15 5 15;
+}
+
+#blanc {
+	-fx-text-fill: #ffffff;
+}
+
+#solution {
+	-fx-padding: 0 0 15 50;
+	-fx-font-weight: bold;
+	-fx-text-fill: #009900;
+}
+
+#mauvaise_reponse {
+	-fx-padding: 0 0 15 50;
+}
+
+#mauvaise_reponse .text {
+	-fx-font-weight: bold;
+	-fx-strikethrough: true;
+}
+
+#label_profil {
+	-fx-font-weight: bold;
+	-fx-label-padding: 0 20 0 20;
+	-fx-font-size: 120%;
+}
+
+#chapitre {
+	-fx-label-padding: 0 20 0 20;
+	-fx-font-weight: bold;
+	-fx-font-size: 120%;
+}
+
+#title_qcm {
+	-fx-font-size: 250%;
+	-fx-font-weight: bold;
+	-fx-label-padding: 130 0 10 0;
+}
+
+
+#form_title1 {
+	-fx-font-size: 250%;
+	-fx-font-weight: bold;
+	-fx-label-padding: 0 0 10 0;
+}
+
+#form_title2 {
+	-fx-font-size: 150%;
+	-fx-font-weight: bold;
+	-fx-label-padding: 0 0 0 50;
+}
+
+#form_pane {
+	-fx-border-color: #000000;
+	-fx-background-color: #bcbcbc;
+	-fx-border-radius: 10px;
+	-fx-background-radius: 10px;
+	-fx-padding: 30 30 30 30;
+}
+
+

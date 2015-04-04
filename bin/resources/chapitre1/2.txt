@@ -1,0 +1,47 @@
+panes>4
+title2>Qu’est ce que la CVA?
+
+Comme nous l’avons vu dans la partie précédente, la CVA fait partie intégrante du risque de contrepartie. 
+
+Mais qu’est ce que c’est le risque de contrepartie?
+
+Le risque de contrepartie est le risque de perte engendrée par le défaut (faillite) d’une contrepartie qui a, envers une institution, des obligations financières.
+Ce risque dépend:
+- de la probabilité de faillite d’une entreprise, que l’on notera PD pour Probabilité de Défaut
+- du montant de ses obligations financières, noté EAD: Exposure At Default
+- le taux de perte en cas de défaut, plus communément appelé LGD pour Loss Given Default
+
+next>
+title2>Qu’est ce que la CVA?
+
+Passons à la définition du CVA:
+
+Le CVA (en français l’Ajustement de valeur de crédit et en anglais Credit Value Adjustment) est un indice pour prendre en compte la perte attendue en cas de défaut de la contrepartie.  Il s’assimile, au niveau d’un portefeuille ou d’un contrat, comme la différence entre la valorisation sans risque  et la valorisation qui tient compte de la probabilité de défaut.
+Par définition on a donc:
+					CVA= P – p
+
+Avec 
+- P: Valeur de marché du portefeuille qui ne tient pas compte du risque de défaut 
+- p: Valeur de marché du portefeuille prenant en compte le risque de défaut
+
+next>
+title2>Qu’est ce que la CVA?
+
+Toutefois le calcul se complique en ce qui concerne les contrats bilatéraux, tel qu’avec les dérivés OTC et les transactions de financement de titres, où les deux contreparties peuvent faire défaut. 
+
+Par conséquent si la banque calculant le CVA, chaque jour, prend en compte cet événement la formule du CVA doit inclure le DVA (Debit Valuation Adjustment), indice qui  consiste à intégrer la possibilité de défaut de l'établissement émetteur lui-même à la valorisation du produit dérivé.
+
+Il existe donc deux formules de la CVA:
+- La CVA unilatérale: une seule contrepartie risque de faire défaut
+- La CVA bilatérale: les deux contreparties peuvent faire défaut.
+
+next>
+title2>Qu’est ce que la CVA?
+
+Concernant la CVA unilatérale, on se placera donc soit du côté de la banque, soit du côté de la contrepartie.
+
+Exemple:
+Si l’on se place du côté de la banque, on considère qu’elle ne risque pas de faire défaut.La CVA unilatérale est alors le montant que la banque va appliquer au portefeuille pour se couvrir d’un risque de défaut de la contrepartie.
+Et inversement si l’on se place du côté de la contrepartie.
+
+NB: En réalité, aucune des deux parties n’est sans risque de défaut. C’est en cela que la CVA bilatérale intervient afin que les deux parties puissent trouver un accord sur le prix du portefeuille.
