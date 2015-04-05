@@ -1,0 +1,102 @@
+panes>11
+title1>L'exposition de crédit
+title2>Les différents types d'exposition
+
+Il est simple de déterminer l’exposition à l’instant présent.
+
+Cependant la déterminer à des futures dates est beaucoup plus complexe car la valeur du dérivé n’est pas connue 
+
+Ainsi pour connaître une exposition future il est nécessaire d’effectuer des simulations 
+
+next>
+
+image>5/8.jpg
+
+next>
+title2>Les différents types d'exposition
+Modéliser une exposition future revient à déterminer la valeur la plus probable de cette exposition parmi toutes les simulations
+
+Il existe ainsi plusieurs types d’expositions selon le degré de certitude ou selon sa valeur dans le temps : 
+
+	- Expected Exposure (EE)
+	- Potential Future Exposure (PFE)
+	- Maximum PFE
+	- Expected Positive Exposure (EPE)
+
+next>
+title3>Expected Exposure
+C’est la moyenne des simulations d’exposition à un instant t
+
+image>5/9.jpg
+
+On prend seulement les expositions positives (en noir) dans le calcul de cette moyenne
+
+next>
+title3>Potential Future Exposure
+C’est l’exposition la plus importante qu’on peut avoir selon un certain degré de confiance (en général 95% ou 99%)
+
+image>5/10.jpg
+
+next>
+title3>Potential Future Exposure
+
+Le PFE répond à la question :
+
+	 - Quelle est la pire perte qu’on peut avoir avec une certitude de 99%?
+
+Cela veut tout simplement dire que dans 99% des simulations, l’exposition ne dépassera par le PFE
+
+On prend en compte les expositions négatives pour l’intervalle de confiance.
+
+next>
+title3>Maximum PFE
+
+Comme son nom l’indique, la Maximum PFE est la valeur maximale des expositions futures possibles pendant un intervalle de temps.
+
+image>5/11.jpg
+
+next>
+title3>Maximum PFE
+
+Contrairement au PFE qui représente une exposition à un instant t, le Max PFE représente une exposition dans un intervalle de temps.
+
+Appelé aussi Peak PFE, cette valeur représente donc le pire scénario possible d’exposition dans l’intervalle de temps de simulation.
+
+image>5/11.jpg
+
+next>
+title3>Expected Positive Exposure
+
+Tout comme le Max PFE, l’expected positive exposure représente la moyenne des Expected Exposure pendant l’horizon de temps des simulations
+
+image>5/12.jpg
+
+next>
+title3>Negative Exposure
+
+Parallèlement aux expositions positives détaillées précédemment, il existe des types d’exposition pour les expositions négatives
+
+Une exposition négative pour une contrepartie A représente une exposition positive pour la contrepartie B avec qui elle possède des contrats.
+
+Il existe donc :
+ 
+	- Negative Positive Exposure : l’opposé de l’EE
+
+	- Expected Negative Exposure : l’opposé de l’EPE
+
+next>
+title3>Effective Exposure
+
+Introduit par le Comité de Bâle en 2005, l’effected expected exposure (EEE) représente l’EE dont la valeur ne peut décroître même si l’exposition diminue
+
+L’EEE prend en compte le fait qu’une transaction à sa maturité sera remplacée par une autre transaction (Roll Over)
+
+L’Effective Expected Positive Exposure représente la moyenne de EEE dans l’horizon de temps des simulations.
+
+Ces deux expositions font l’hypothèse qu’une diminution de l’exposition est le résultat d’une transaction arrivée à échéance.
+
+
+
+
+
+

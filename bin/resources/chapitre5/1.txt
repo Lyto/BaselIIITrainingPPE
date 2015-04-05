@@ -1,18 +1,51 @@
-panes>2
+panes>4
 title1>L'exposition de crédit
-title2>Sous-titre
+title2>Définition exposition de crédit
 
-title3>Balbla
-aegpzgn
-zegpikn,z
+Dans un premier temps, nous allons définir l’exposition de crédit indépendamment des facteurs de risque.
 
+Il y a 2 niveaux d’exposition de crédit : 
 
-grzgn
+			-    Au niveau d’un contrat unique « i »
+
+			-    Au niveau d’une contrepartie
 
 next>
-zognrj
+title3>Exposition au niveau d’un contrat unique 
+
+À tout instant, un contrat unique « i » possède une valeur de marché Vi.
+
+L’exposition au niveau de ce contrat est alors déterminée par le coût du remplacement du contrat à l’instant de défaut t de la contrepartie. 
+
+On a alors 2 cas :
+
+	- si Vi(t) < 0 pour la banque : la banque paye le prix du défaut de contrepartie et s’engage avec une nouvelle contrepartie avec un contrat similaire : AUCUNE PERTE
+
+	- si Vi(t) > 0 pour la banque : la banque clôture le contrat mais ne reçoit rien de la part de la contrepartie qui a fait défaut : PERTE nette = Vi(t)
+
+next>
+title3>Exposition au niveau d’un contrat unique 
+Ainsi, pour résumé, lorsqu’une contrepartie fait défaut pour un seul contrat dérivé l’exposition de crédit d’une banque est le maximum entre :
+
+		-  la valeur de marché du contrat au moment du défaut Vi(t)
+		-  0
+	
+d’où :
+
+image>5/1.jpg
+
+next>
+title3>Exposition au niveau d’une contrepartie
+
+Mais, en règle générale, pour une même contrepartie, il existe plusieurs contrats dérivés « i ».
+
+Donc au lieu de calculer l’exposition pour un seul des contrats dérivés, on additionne l’ensemble de l’exposition des contrats afin de déterminer l’exposition de la banque avec cette contrepartie. 
+
+On a ainsi : 
+
+image>5/2.jpg
 
 
-efzagrz
 
-qeagrzh
+
+

@@ -1,0 +1,125 @@
+panes>12
+title1>L'exposition de crédit
+title2>Mesure de l'exposition
+
+Mesurer l’exposition repose sur une équilibre entre 2 effets :
+
+	- Déterminer une valeur future de l’exposition repose sur des valeurs futures des variables de marché. Plus on augmente l’intervalle de temps de la simulation, plus on augmente l’incertitude de ces valeurs futures et donc plus le risque augmente.  
+
+	- Plusieurs instruments financiers incluent des paiements qui ne sont pas réglés tout de suite mais au cours du temps défini dans le contrat. Cette dimension temporelle des instruments financiers tend à réduire l’exposition car leurs valeurs s’atténuent au cours du temps.
+
+next>
+title3>Mesure de l'exposition
+
+Nous avons précédemment vu ce qu’était l’exposition et les différents types.
+
+Nous allons maintenant présenter une des méthodes de calcul de l’exposition : Monte-Carlo
+
+C’est une approche générique mais beaucoup plus longue qu’une approche via des approximations
+
+next>
+title3>Mesure de l'exposition
+
+Monte-Carlo permet de prendre en compte plus simplement des facteurs tels que les netting, collateral…
+
+On peut diviser les simulations de Monte-Carlo en 3 étapes :
+
+	- Génération des scénarios
+
+	- Evaluation des instruments
+
+	- Agrégation du portfolio
+
+next>
+title3>Génération du scénario
+
+Il est nécessaire de définir les facteurs de risques pertinents et utiliser des modèles pour décrire leurs évolutions.
+
+Facteurs de risques : Taux d’échange, taux d’intérêts, credit spread…
+
+La génération du scénario se fait via la simulation de ces facteurs de risques.
+
+next>
+title3>Génération du scénario
+
+Un scénario est caractérisé par la réalisation des facteurs de risques à certains instant t de simulation.
+
+La date finale de simulation doit être supérieure ou égale à la maturité la plus grande de l’instrument considéré.
+
+Il existe 2 modèles de simulations :
+
+	- Path by Path
+
+	- Direct Jump
+
+next>
+title3>Génération du scénario
+
+Path by Path :
+
+image>5/13.jpg
+
+Une approche path by path permet de simuler un trajectoire entière possible.
+
+next>
+title3>Génération du scénario
+
+Direct Jump :
+
+image>5/14.jpg
+
+Une approche Direct Jump permet au contraire de simuler chaque instant t indépendamment des autres t.
+
+next>
+title3>Génération du scénario
+
+Les scénarios sont souvent spécifiés via les équations différentielles stochastiques.
+
+Par exemple pour les taux d’échange, la modélisation se fait souvent par le mouvement brownien
+
+image>5/16.jpg
+
+	- (t) représente le drift instantané
+	- (t) représente la volatilité instantané
+	- (t) représente le processus de Wiener 
+
+next>
+title3>Génération du scénario
+
+On remarque 2 paramètres importants dans la formule de Black & Scholes :
+
+Le paramètre (t) représente la tendance (le drift). Il s’agit de la médiane de la gaussienne à un instant t.
+
+Le paramètre (t) représente lui la volatilité du marché à un instant t. Il s’agit de l’écart type de la gaussienne à cet instant.
+
+next>
+title3>Génération du scénario
+
+image>5/15.jpg
+
+A chaque instant, la courbe suit une tendance et est soumise à une volatilité , que l’on peut modéliser par une loi normale de médiane et d’écart type .
+
+next>
+title3>Evaluation des instruments
+
+Après avoir généré les scénarios, il est nécessaire d’évaluer les différents instruments à chaque date de simulation
+
+L’évaluation doit se faire :
+
+	- Pour chaque instrument du portfolio
+	- Pour quelques milliers de scénarios des facteurs de risque
+	- Pour une centaine de date
+
+next>
+title3>Agrégation du portfolio
+
+Après avoir évaluer les instruments, nous nous retrouvons avec une grande quantité de données que nous pouvons diviser en 3 niveaux:
+
+	- Le contrat k
+
+	- La simulation s
+
+	- La date t
+
+La valeur future de l’exposition est une fonction de ces 3 composants V(k,s,t) à laquelle on doit appliquer les netting set.
+
