@@ -1,0 +1,84 @@
+panes>8
+title1>L'exposition de crédit
+title2>Outils de réduction de l'exposition
+
+Nous avons vu précédemment ce qu’était l’exposition.
+
+Nous allons maintenant décrire 2 outils qui permettent aux banques de limiter leur exposition et donc contrôler la valeur du CVA :
+
+ - Netting agreements
+
+ - Collateral
+
+next>
+title3>Netting agreements
+
+Comme on a vu précédemment une banque possède plusieurs contrats avec une contrepartie.
+
+On pourrait penser qu’un contrat avec une valeur négative pourrait compenser un contrat avec une valeur positive.
+
+Cependant sans accords préalables entre les 2 parties, il est obligatoire de régler indépendamment ces contrats.
+
+next>
+title3>Netting agreements
+
+Dans le cas des netting agreements, il est possible de régler les transactions en les agrégeant :
+
+C’est un contrat entre deux contreparties qui dans le cas d’un défaut permet l’agrégation des transactions entre les deux contreparties : une transaction avec un gain peut compenser une transaction avec une perte.
+
+L’exposition devient alors le maximum entre la valeur nette du portfolio et 0 :
+
+image>5/3.jpg
+
+next>
+title3>Collateral
+
+Le deuxième outil d’exposition est d’utiliser des garanties ou « Collateral » en anglais.
+
+Ces garanties sont spécifiées dans les « margin agreements » signés par les deux contreparties.  
+
+Le collateral est le nouveau seuil, défini par les 2 contreparties, à partir duquel l’exposition est calculée.
+
+next>
+title3>Collateral
+
+Un margin agreement oblige une partie ou les deux à couvrir l’exposition lorsque sa valeur dépasse un certain seuil défini par les 2 contreparties. 
+
+Si la valeur de l’exposition excède les prévisions des parties, la contrepartie devra couvrir cet excès-là en augmentant ce seuil. 
+
+Au contraire lorsque l’exposition diminue par rapport au seuil, la garantie couverte diminue aussi pour retrouver la même différence par rapport au seuil.
+
+next>
+title3>Collateral
+Ainsi, dans la formule de l’exposition collatéralisé devient :
+
+image>5/4.jpg
+
+Ck(t), la valeur du collateral pour l’ensemble des contrats i du portefeuille.
+
+Dans le cas où il n’y aurait pas de margin agreements, la valeur du collateral est par convention égale à 0. On retrouve alors la formule
+
+image>5/5.jpg
+
+next>
+title3>Modélisation de l'exposition collatéralisé
+
+Définissons « s » comme la « Margin Period of Risk » : 
+L’intervalle de temps entre le dernier échange de collatéral jusqu’à ce que la contrepartie qui fasse dépôt ferme sa position.
+
+Nous allons détailler le processus de modélisation de l’exposition dans le cas d’un collatéral à la date « t »
+
+Pour calculer le collateral C(t), on compare la valeur de l’exposition non collatéralisé à la date « t-s » avec un seuil de garantie H défini
+
+next>
+title3>Modélisation de l'exposition collatéralisé
+
+Le collateral est nul lorsque C(t) est inférieur au « Minimum transfer amount » ou MTA
+
+image>5/6.jpg
+
+MTA : montant qui permet de réduire la fréquence des échanges de collatéral lorsqu’il est inférieur à cette limite.
+
+Après avoir déterminé la valeur du collatéral, il suffit alors de la soustraire à l’exposition :
+
+image>5/7.jpg

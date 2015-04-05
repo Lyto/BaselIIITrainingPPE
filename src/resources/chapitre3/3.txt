@@ -1,0 +1,35 @@
+panes>4
+title1>Probabilité de défaut
+title2>CDS (Credit Default Swap)
+
+Comme nous l’avons vu précédemment, le CDS est une assurance par laquelle un établissement bancaire (souscripteur) se protège du risque de défaut de l’entité de référence (émetteur) à qui elle a prêté de l’argent, en payant une prime annuelle à un vendeur de protection.
+ 
+Cette prime est payée tant que l’entité n’a pas fait défaut jusqu’à la maturité du contrat sur lequel porte ce CDS. Son montant est calculé par rapport à un pourcentage du montant total garanti par le CDS (le nominal).
+
+next>
+Si l’entreprise fait défaut, l’acheteur de protection (la banque) paiera sa prime courue au vendeur de protection et lui livrera une quantité convenue des actifs émis par l’entité défaillante. En échange de tout cela, le vendeur versera à l’acheteur un « Default Settlement».
+ 
+En d’autres termes, le vendeur de position récupèrera la dette de l’entité défaillante envers la banque et dédommagera en échange la banque d’un montant en cash.
+
+
+Le montant de dédommagement est calculé comme tel :
+Il s’agit du produit entre le montant notionnel du swap (nominal) et la différence entre le prix de référence de l’actif et sa valeur de marché au moment de la défaillance (P).
+
+Default settlement = (100-P)% * nominal
+ 
+Ainsi, l’acheteur est exactement dédommagé de la chute de la valeur de marché de l’actif  de référence.
+
+next>
+
+Avant le défaut de l’entité:
+image>3/cds1.jpg
+
+Lors du défaut de l’entité:
+image>3/cds2.jpg
+
+next>
+Exemple :
+
+Prenons l’exemple de deux entreprises qui signent le 1 Septembre 2011, un CDS 10 ans sur 100 millions de nominal d’obligations au prix de 100%. L’acheteur de protection s’engage ici à payer 4% par ans (40 bp) au vendeur de protection. Si l’entité de référence contre laquelle l’entreprise se protège ne fait pas défaut, l’entreprise devra payer chaque 1 Septembre de 2011 à 2021 : 400 000 € au vendeur de protection.
+
+Si l’entreprise fait défaut, il y aura dénouement du contrat CDS. Ainsi, l’acheteur livrera les 100 millions d’obligations au vendeur de protection (au prix notionnel). De plus, le vendeur de protection versera un montant en cash de (100-P)% * 100M. Si au moment du défaut, la valeur de marché de l’actif est évaluée à 70% du nominal, alors le montant en cash versé par le vendeur de protection sera de 30M (=(100-30)%*100M).

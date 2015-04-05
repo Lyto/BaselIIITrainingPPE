@@ -1,0 +1,21 @@
+panes>2
+title1>Introduction au CVA
+title2>La CVA unilatérale
+
+Passons au coté mathématique!
+
+La formule de la CVA unilatérale que l’on trouve dans le texte de Bâle est la suivante:
+
+image>1/CVA1.jpg
+
+next>
+title2>La CVA unilatérale
+
+Afin de simplifier la compréhension de cette formule nous pouvons la diviser en 3 parties:
+- LGD: Loss Given Default
+- La probabilité de défaut
+- L’Exposition
+
+image>1/CVA2.jpg
+
+Ces 3 parties vont être détaillées dans les prochaines chapitres.
