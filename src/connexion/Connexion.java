@@ -22,7 +22,30 @@ public class Connexion {
 
 	}
 
-	
+	public int getAvancee() {
+		int avancee = 0;
+		try {
+			String sql = "SELECT avancee FROM users WHERE id = " + id;
+			res = stmt.executeQuery(sql);
+			if (res.next()) {
+				avancee = res.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return avancee;
+	}
+
+	public void setAvancee(int avancee) {
+		try {
+			String sql = "UPDATE users SET avancee = " + avancee
+					+ " WHERE id = " + id;
+			stmt.executeUpdate(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
 	// *************************************************************************************
 	// OPERATIONS SUR LA TABLE USERS
 	// *************************************************************************************
@@ -44,10 +67,11 @@ public class Connexion {
 		}
 
 	}
-	
+
 	public void register(String login, String password) {
 		try {
-			String sql = "INSERT INTO users(login, password) VALUES ('" + login + "', '" + password + "')";
+			String sql = "INSERT INTO users(login, password) VALUES ('" + login
+					+ "', '" + password + "')";
 			stmt.executeUpdate(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -72,7 +96,7 @@ public class Connexion {
 			return null;
 		}
 	}
-	
+
 	public String getPassword() {
 		try {
 			String sql = "SELECT password FROM users WHERE id = " + id;
@@ -86,20 +110,22 @@ public class Connexion {
 			return null;
 		}
 	}
-	
+
 	public void registerPoints(int id_chap, int points) {
 		try {
-			String sql = "UPDATE users SET chapitre" + id_chap + " = " + points + " WHERE id = " + id;
+			String sql = "UPDATE users SET chapitre" + id_chap + " = " + points
+					+ " WHERE id = " + id;
 			stmt.executeUpdate(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public int getPoints(int id_chap) {
 		int points = 0;
 		try {
-			String sql = "SELECT chapitre" + id_chap + " FROM users WHERE id = " + id;
+			String sql = "SELECT chapitre" + id_chap
+					+ " FROM users WHERE id = " + id;
 			res = stmt.executeQuery(sql);
 			if (res.next()) {
 				points = res.getInt(1);
@@ -111,16 +137,17 @@ public class Connexion {
 	}
 
 	public void changePassword(String password) {
-		
+
 		try {
-			String sql = "UPDATE users SET password = '" + password + "' WHERE id = " + id;
+			String sql = "UPDATE users SET password = '" + password
+					+ "' WHERE id = " + id;
 			stmt.executeUpdate(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 	// *************************************************************************************
 	// OPERATIONS SUR LA TABLE QUESTIONS
 	// *************************************************************************************
@@ -129,7 +156,8 @@ public class Connexion {
 		int nb = 0;
 
 		try {
-			String sql = "SELECT count(*) FROM questions WHERE id_chap = " + id_chap;
+			String sql = "SELECT count(*) FROM questions WHERE id_chap = "
+					+ id_chap;
 			res = stmt.executeQuery(sql);
 			if (res.next()) {
 				nb = res.getInt(1);
@@ -146,7 +174,8 @@ public class Connexion {
 
 		int i = 0;
 		try {
-			String sql = "SELECT id, nom FROM questions WHERE id_chap = " + id_chap;
+			String sql = "SELECT id, nom FROM questions WHERE id_chap = "
+					+ id_chap;
 			res = stmt.executeQuery(sql);
 			while (res.next()) {
 				table[i][0] = res.getString(1);
@@ -164,7 +193,8 @@ public class Connexion {
 		int reponse = 0;
 
 		try {
-			String sql = "SELECT id_rep FROM questions WHERE id = " + id_question;
+			String sql = "SELECT id_rep FROM questions WHERE id = "
+					+ id_question;
 			res = stmt.executeQuery(sql);
 			if (res.next()) {
 				reponse = res.getInt(1);
@@ -172,17 +202,16 @@ public class Connexion {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return reponse;
 
 	}
-	
-	
 
-	public String getExplication(int id_question) {		
+	public String getExplication(int id_question) {
 		String explication = null;
 		try {
-			String sql = "SELECT explication FROM questions WHERE id = " + id_question;
+			String sql = "SELECT explication FROM questions WHERE id = "
+					+ id_question;
 			res = stmt.executeQuery(sql);
 			if (res.next()) {
 				explication = res.getString(1);
@@ -234,6 +263,5 @@ public class Connexion {
 
 		return table;
 	}
-	
 
 }

@@ -1,4 +1,4 @@
-panes>18
+panes>15
 title1>Probabilité de défaut
 title2>Estimation de la probabilité dans une hypothèse de neutralité à l’égard du risque
 
@@ -23,7 +23,7 @@ Les méthodes les plus communes pour définir un spread sont :
 - de l’utilisation de “proxy or mapping model”
 
 next>
-Exemple 1 :
+title3>Exemple 1 :
 	
 Prenons un exemple simple afin de mieux comprendre comment les probabilités de risque neutre sont corrélées aux spreads.
 
@@ -43,7 +43,7 @@ Cependant, l’investisseur payera une prime (un spread de 10K€) pour se couvrir d
 
 Si l’investisseur est neutre à l’égard du risque, alors il y a égalité entre le prix de l’investissement (la prime) et son espérance de gain.
 
-Ainsi, pour considérer un risque neutre, on ajustera les probabilités de défaut afin de satisfaire cette égalité:
+Ainsi, pour considérer un risque neutre, on ajustera les probabilités d'occurence afin d'obtenir des probabilités de défaut qui satisferont cette égalité:
 
 Espérance de gain = (-100K)*45% + (100K)*55%  = 10K€ = Prime
 
@@ -52,77 +52,53 @@ image>3/probas2.jpg
 On obtient ainsi des probabilités risque neutre.
 
 next>
-Prenons un exemple afin de mieux comprendre comment le prix des actifs risqués évoluent en fonction des probabilités risque neutre.
+title3>Exemple2:
 
-On sait que le prix d’un actif est la somme des valeurs actualisées des flux futurs qu’il génère.
-Pour un actif non risqué, les flux sont connues comme le spread reste nul.
-Cependant pour un actif risqué, les flux qu’il génère fluctuent. Il est donc nécessaire d’approximer ces flux grâce aux probabilités de défaut.
+Poursuivons notre premier exemple afin de mieux comprendre comment le prix des actifs risqués évoluent en fonction des probabilités risque neutre.
 
-next>
-Prenons deux actifs de même maturité :
-- Soit l’actif 1, non risqué, qui rapporte 1 euro quelque soit l’état de la nature (A ou B).
+Considérons un deuxième actif où l'investisseur a 50% de chances de récupérer son investissement et 50% de doubler son investissmenet (100K€), en considérant des probabilités d'occurence.
 
-image>3/actif1.jpg
-
-- Et soit l’actif 2, risqué, qui rapporte 2 euros pour l’état A et 3 euros pour l’état B. 
-
-image>3/actif2.jpg
+image>3/ex2.jpg
 
 next>
-Posons, VA et VB, les valeurs actuelles d’1 euro respectivement dans l’état A et B.
+On peut alors calculer son espérance de gain à partir des probabilités d'occurence:
 
-Et donc, VA+VB la valeur actuelle de 1€ dans 1 an quelque soit l’état de la nature. Il s’agit du prix d’un actif sans risque à un an de nominale 1€.
+image>3/pba1.jpg
 
-On peut en déduire une relation entre VA, VB (les flux futurs des deux actifs) et la valeur actuelle (le prix) des actifs:
-
-next>
-(Actif 1 non risqué) : 1VA + 1VB = 0,95
-
-image>3/ac1.jpg
-
-(Actif 2 risqué) : 2VA + 3VB = 2,4
-
-image>3/ac2.jpg
-
-d’où VA=0,45 et VB=0,5.
+Son espérance de gain sera alors de (+100K)*50% + (OK)*50% = 50K€.
 
 next>
-Introduisons qi : une probabilité telle que :
+Nous souhaitons ici déterminer le prix de l'actif 2 connaissant le prix de l'actif 1.
 
-image>3/qi.jpg
+Pour cela nous allons constituer un portefeuille d'actif 1 et 2 et nous utiliserons les probabilités de défaut neutres à l'égard du risque.
 
-image>3/ccl.jpg
+Nous allons acheter deux actifs 2 et vendre un actif 1.
 
-next>
-Soit R, le taux de rendement de l’actif sans risque :
+Dans ce cas, l'espérance de gain certain du portefeuille sera de:
 
-Dans notre exemple,
-Valeur future = 1
-Valeur actuelle = VA+VB = 0,95
+2*(50K) - 1*(0K) = 100K€
 
-Or,
-image>3/va.jpg
-
-Donc:
-image>3/vavb.jpg
+Il s'agit alors du prix de notre portefeuille dans une hypothèse de neutralité à l'égard du risque.
 
 next>
-Ainsi, alors on considérant que le rendement de l’actif sans risque est le même que le rendement de l’actif risqué:
+Connaissant le prix di portefeuille et le prix de l'actif 1, nous pouvons en déduire le prix de l'actif 2 afin que l'investisseur soit neutre à l'égard du risque:
 
-image>3/r1.jpg
+image>3/p.jpg
 
-image>3/r2.jpg
+Donc le prix de l'actif 2 est égal à 55K€.
+
+Ainsi, pour ce portefeuille, l'investisseur aura bien payé: 2*55K - 1*10K = 100K€ afin que son espérance de gain soit de 100K€.
+
+On voit bien ici, que les probabilités de défaut risque neutre sont un processus de calcul de prix.
+
+En effet, conaissant le gain souhaité, on calcule le prix de l'actif en se plaçant dans une hypothèse de neutralité à l'égard du risque (l'investissement est égal à l'espérance de gain).
 
 next>
-Si les investisseurs sont risque neutre, le taux de rendement de chaque actif est égale au taux sans risque et le prix d’un titre risqué est égale à la valeur actualisé de l’espérance de gain.
+On peut ainsi déterminer les probabilités de défaut neutre à l'égard du risque pour l'actif 2:
 
-image>3/vt.jpg
+Espérance de gain de l'actif 2 = (+100K)*55% + (0K)*45% = 55K€ = Prix de l'actif 2
 
-Dans notre exemple: Eq(Vt+1) = qA+qB pour l’actif 1 et Eq(Vt+1)=2qA+3qB pour l’actif 2.
-
-C’est pourquoi on appelle qA et qB les probabilités risque neutre. Ce ne sont pas les probabilités d’occurrence des deux états de la nature. Ce sont les probabilités de défaut prenant en compte une indifférence de l’investisseur par rapport au risque.
-
-Ainsi pour évaluer des actifs risqués il est nécessaire d’ajuster les probabilités historiques de défauts et les taux de recouvrement pour obtenir des probabilités risque neutre.
+image>3/pba2.jpg
 
 next>
 title3>B- Méthode simple de calcul de la probabilité de défaut
