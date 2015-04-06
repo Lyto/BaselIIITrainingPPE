@@ -16,7 +16,7 @@ public class SeConnecter {
 		
 		GridPane pane = new GridPane();
         pane.setAlignment(Pos.CENTER);
-        pane.setVgap(30);
+        pane.setVgap(24);
         
         // [Label] Bienvenue
         Label welcome = new Label("Bienvenue sur Basel III Training");
@@ -54,21 +54,39 @@ public class SeConnecter {
         // [Label + Button] S'inscrire
         GridPane p2 = new GridPane();
         p2.setAlignment(Pos.CENTER);
-        p2.setHgap(10);
-        p2.setVgap(10);
+        p2.setHgap(5);
+        p2.setVgap(5);
         
         Label forgot = new Label("Vous n'êtes pas encore inscrit?");
+        GridPane.setHalignment(forgot, HPos.CENTER);
         forgot.setId("inscription");
         p2.add(forgot, 0, 0);
         
         Button sub = new Button("S'inscrire");
+        GridPane.setHalignment(sub, HPos.CENTER);
         p2.add(sub, 1, 0);
-        
-        pane.add(p2, 0, 3);
         
         // [Action On Button] Inscription
         sub.setOnAction((event) -> {
         	new Inscription(connexion);
+        });
+        
+     // [Label + Button] Mode invité
+        Label invit = new Label("Vous n'êtes pas connecté à internet?");
+        invit.setId("inscription");
+        GridPane.setHalignment(invit, HPos.CENTER);
+        p2.add(invit, 0, 1);
+        
+        Button invite = new Button("Mode invité !");
+        GridPane.setHalignment(invite, HPos.CENTER);
+        p2.add(invite, 1, 1);
+        
+        pane.add(p2, 0, 3);
+        
+        // [Action On Button] Mode invité
+        invite.setOnAction((event) -> {
+        	new MenuInvite();
+        	stage.close();
         });
         
         // [Action On Button] Lancement de la page Home

@@ -27,7 +27,12 @@ public class Accueil extends GridPane {
 		this.setVgap(30);
 		this.setId("background");
 
-		Label welcome = new Label("Bienvenue " + connexion.getName() + " !");
+		Label welcome;
+		if (connexion != null) {
+			welcome = new Label("Bienvenue " + connexion.getName() + " !");
+		} else {
+			welcome = new Label("Bienvenue ! [Mode invité]");
+		}
 		welcome.setId("title");
 		GridPane.setHalignment(welcome, HPos.CENTER);
 		this.add(welcome, 0, 0);
