@@ -47,6 +47,12 @@
 	-fx-padding: 0 0 15 50;
 }
 
+#explication {
+	-fx-label-padding: 0 0 15 50;
+	-fx-font-weight: bold;
+	-fx-font-style: italic;
+}
+
 #valider {
 	-fx-font-size: 120%;
 	-fx-font-weight: bold;

@@ -22,6 +22,7 @@ public class Connexion {
 
 	}
 
+	
 	// *************************************************************************************
 	// OPERATIONS SUR LA TABLE USERS
 	// *************************************************************************************
@@ -109,6 +110,17 @@ public class Connexion {
 		return points;
 	}
 
+	public void changePassword(String password) {
+		
+		try {
+			String sql = "UPDATE users SET password = '" + password + "' WHERE id = " + id;
+			stmt.executeUpdate(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
 	// *************************************************************************************
 	// OPERATIONS SUR LA TABLE QUESTIONS
 	// *************************************************************************************
@@ -117,8 +129,7 @@ public class Connexion {
 		int nb = 0;
 
 		try {
-			String sql = "SELECT count(*) FROM questions WHERE id_chap = "
-					+ id_chap;
+			String sql = "SELECT count(*) FROM questions WHERE id_chap = " + id_chap;
 			res = stmt.executeQuery(sql);
 			if (res.next()) {
 				nb = res.getInt(1);
@@ -126,7 +137,6 @@ public class Connexion {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
 		return nb;
 	}
 
@@ -136,8 +146,7 @@ public class Connexion {
 
 		int i = 0;
 		try {
-			String sql = "SELECT id, nom FROM questions WHERE id_chap = "
-					+ id_chap;
+			String sql = "SELECT id, nom FROM questions WHERE id_chap = " + id_chap;
 			res = stmt.executeQuery(sql);
 			while (res.next()) {
 				table[i][0] = res.getString(1);
@@ -166,6 +175,22 @@ public class Connexion {
 		
 		return reponse;
 
+	}
+	
+	
+
+	public String getExplication(int id_question) {		
+		String explication = null;
+		try {
+			String sql = "SELECT explication FROM questions WHERE id = " + id_question;
+			res = stmt.executeQuery(sql);
+			if (res.next()) {
+				explication = res.getString(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return explication;
 	}
 
 	// *************************************************************************************
@@ -209,5 +234,6 @@ public class Connexion {
 
 		return table;
 	}
+	
 
 }

@@ -13,17 +13,18 @@ public class Menu {
 
 	BorderPane bpane;
 	Connexion connexion;
+	Stage stage;
 
 	public Menu(Connexion connexion) {
 
 		this.connexion = connexion;
 
-		Stage stage = new Stage();
+		stage = new Stage();
 
 		bpane = new BorderPane();
 		bpane.setLeft(createMenu());
 
-		bpane.setCenter(new Accueil(connexion, bpane));
+		bpane.setCenter(new Accueil(connexion, stage));
 
 		Scene scene = new Scene(bpane, 1200, 800);
 		scene.getStylesheets().add(
@@ -48,7 +49,7 @@ public class Menu {
 		Hyperlink h1_home = new Hyperlink("Accueil");
 		vbox_home.getChildren().add(h1_home);
 		h1_home.setOnAction((event) -> {
-			bpane.setCenter(new Accueil(connexion, bpane));
+			bpane.setCenter(new Accueil(connexion, stage));
 		});
 
 		tp_home.setContent(vbox_home);
@@ -97,7 +98,7 @@ public class Menu {
 		Hyperlink h4_chap1 = new Hyperlink("QCM");
 		vbox_chap1.getChildren().add(h4_chap1);
 		h4_chap1.setOnAction((event) -> {
-			ScrollPane scroll = new ScrollPane(new Chap1_QCM(connexion));
+			ScrollPane scroll = new ScrollPane(new QCM(connexion, 1));
 			scroll.setPrefWidth(950);
 			scroll.setHbarPolicy(ScrollBarPolicy.NEVER);
 			bpane.setCenter(scroll);
@@ -111,14 +112,26 @@ public class Menu {
 
 		VBox vbox_chap2 = new VBox();
 
-		Hyperlink h0_chap2 = new Hyperlink("-");
+		Hyperlink h0_chap2 = new Hyperlink("Qu'est-ce que le LGD?");
 		vbox_chap2.getChildren().add(h0_chap2);
+		h0_chap2.setOnAction((event) -> {
+			bpane.setCenter(new Formation("chapitre2/1.txt"));
+		});
 
-		Hyperlink h1_chap2 = new Hyperlink("-");
+		Hyperlink h1_chap2 = new Hyperlink("Qu'est-ce que le taux de recouvrement?");
 		vbox_chap2.getChildren().add(h1_chap2);
+		h1_chap2.setOnAction((event) -> {
+			bpane.setCenter(new Formation("chapitre2/2.txt"));
+		});
 
 		Hyperlink h3_chap2 = new Hyperlink("QCM");
 		vbox_chap2.getChildren().add(h3_chap2);
+		h3_chap2.setOnAction((event) -> {
+			ScrollPane scroll = new ScrollPane(new QCM(connexion, 2));
+			scroll.setPrefWidth(950);
+			scroll.setHbarPolicy(ScrollBarPolicy.NEVER);
+			bpane.setCenter(scroll);
+		});
 
 		tp_chap2.setContent(vbox_chap2);
 
@@ -149,6 +162,12 @@ public class Menu {
 
 		Hyperlink h5_chap3 = new Hyperlink("QCM");
 		vbox_chap3.getChildren().add(h5_chap3);
+		h5_chap3.setOnAction((event) -> {
+			ScrollPane scroll = new ScrollPane(new QCM(connexion, 3));
+			scroll.setPrefWidth(950);
+			scroll.setHbarPolicy(ScrollBarPolicy.NEVER);
+			bpane.setCenter(scroll);
+		});
 
 		tp_chap3.setContent(vbox_chap3);
 
@@ -166,6 +185,12 @@ public class Menu {
 
 		Hyperlink h1_chap4 = new Hyperlink("QCM");
 		vbox_chap4.getChildren().add(h1_chap4);
+		h1_chap4.setOnAction((event) -> {
+			ScrollPane scroll = new ScrollPane(new QCM(connexion, 4));
+			scroll.setPrefWidth(950);
+			scroll.setHbarPolicy(ScrollBarPolicy.NEVER);
+			bpane.setCenter(scroll);
+		});
 
 		tp_chap4.setContent(vbox_chap4);
 
@@ -202,7 +227,10 @@ public class Menu {
 		Hyperlink h4_chap5 = new Hyperlink("QCM");
 		vbox_chap5.getChildren().add(h4_chap5);
 		h4_chap5.setOnAction((event) -> {
-			bpane.setCenter(new Formation("chapitre5/qcm.txt"));
+			ScrollPane scroll = new ScrollPane(new QCM(connexion, 5));
+			scroll.setPrefWidth(950);
+			scroll.setHbarPolicy(ScrollBarPolicy.NEVER);
+			bpane.setCenter(scroll);
 		});
 
 		tp_chap5.setContent(vbox_chap5);

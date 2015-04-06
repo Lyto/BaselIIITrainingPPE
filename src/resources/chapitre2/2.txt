@@ -1,0 +1,8 @@
+panes>1
+title1>Loss Given Default
+title2>Qu'est-ce que le taux de recouvrement?
+
+Le taux de recouvrement R, est défini par l’institution financière qui décide d’avoir recours à l’option CVA.
+
+Il se caractérise par le pourcentage qui sera potentiellement récupéré par une des deux contreparties en cas de défaut de l’autre contrepartie.
+Ainsi, le LGD représente la perte en cas de défaut.

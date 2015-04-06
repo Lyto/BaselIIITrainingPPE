@@ -14,7 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
-public class Chap1_QCM extends GridPane {
+public class QCM extends GridPane {
 
 	Connexion connexion;
 
@@ -23,11 +23,14 @@ public class Chap1_QCM extends GridPane {
 
 	// L'indice du grid pane affiché
 	int current = 0;
+	
+	int id_chap;
 
-	public Chap1_QCM(Connexion connexion) {
+	public QCM(Connexion connexion, int id_chap) {
 
 		super();
 		this.connexion = connexion;
+		this.id_chap = id_chap;
 
 		this.setPrefWidth(935);
 		this.setAlignment(Pos.CENTER);
@@ -35,15 +38,14 @@ public class Chap1_QCM extends GridPane {
 
 		// Titre
 
-		Label welcome = new Label(
-				"Testez vos connaissances sur le Chapitre 1: Bâle III");
+		Label welcome = new Label("Testez vos connaissances!");
 		welcome.setId("title_qcm");
 		GridPane.setHalignment(welcome, HPos.CENTER);
 		this.add(welcome, 0, 1, 2, 1);
 
 		// QCM
 
-		String[][] questions = connexion.getQuestionsFromChap(1);
+		String[][] questions = connexion.getQuestionsFromChap(id_chap);
 
 		RadioButton[] radio = new RadioButton[questions.length * 4];
 		int count = 0;
@@ -53,10 +55,10 @@ public class Chap1_QCM extends GridPane {
 		for (int i = 0; i < questions.length; i++) {
 
 			panes[i] = new GridPane();
+			panes[i].setAlignment(Pos.CENTER_LEFT);
 			panes[i].setId("pane");
 
-			Label question = new Label("Question n°" + (i + 1) + ": "
-					+ questions[i][1]);
+			Label question = new Label("Question n°" + (i + 1) + ": " + questions[i][1]);
 			GridPane.setHalignment(question, HPos.LEFT);
 			question.setPrefWidth(850);
 			question.setId("question");
@@ -144,20 +146,30 @@ public class Chap1_QCM extends GridPane {
 								radio[radio_count].setId("mauvaise_reponse");
 							}
 						}
-
 					}
 				}
 
-				connexion.registerPoints(1, points);
+				connexion.registerPoints(id_chap, points);
 				afficherScore(questions.length);
 
 				// AFFICHER RESULTATS
 				this.add(welcome, 0, 1);
 				int row = 2;
 				for (int z = 0; z < questions.length; z++) {
+					int id_question = Integer.parseInt(questions[z][0]);
+					
 					panes[z].setVisible(true);
+					
+					String explication = connexion.getExplication(id_question);
+					if(explication != null) {
+						Label label = new Label(explication);
+						label.setId("explication");
+						panes[z].add(label, 0, 5);
+					}
+					
 					this.add(panes[z], 0, row);
 					row++;
+					
 				}
 				
 				Label espace = new Label(" ");
@@ -184,7 +196,7 @@ public class Chap1_QCM extends GridPane {
 		pane.setAlignment(Pos.CENTER);
 		pane.setVgap(15);
 
-		Label qcm = new Label("Chapitre 1: Bâle III - QCM ");
+		Label qcm = new Label("Chapitre " + id_chap);
 		qcm.setStyle("-fx-font-size: 150%; -fx-font-weight: bold;");
 		GridPane.setHalignment(qcm, HPos.CENTER);
 		pane.add(qcm, 0, 0, 2, 1);

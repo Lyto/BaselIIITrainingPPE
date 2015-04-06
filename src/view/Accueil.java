@@ -1,24 +1,24 @@
 package view;
 
 import connexion.Connexion;
+import controller.Controller;
 import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.stage.Stage;
 
 public class Accueil extends GridPane {
 
 	Connexion connexion;
-	BorderPane bpane;
 
-	public Accueil(Connexion connexion, BorderPane bpane) {
+	public Accueil(Connexion connexion, Stage stage) {
 
 		super();
 
 		this.connexion = connexion;
-		this.bpane = bpane;
 		
 		this.setPrefWidth(935);
 
@@ -45,6 +45,16 @@ public class Accueil extends GridPane {
 
 		//GridPane recap = createRecap();
 		//this.add(recap, 0, 5);
+		
+		Button deconnexion = new Button("Déconnexion");
+		GridPane.setHalignment(deconnexion, HPos.RIGHT);
+		deconnexion.setStyle("-fx-font-weight: bold;");
+		deconnexion.setOnAction((event) -> {
+			new Controller(new Stage());
+			stage.close();
+		});
+		
+		this.add(deconnexion, 0, 6);
 
 	}
 

@@ -1,0 +1,19 @@
+panes>2
+title1>Loss Given Default
+title2>Qu'est-ce que le LGD?
+
+Nous voilà dans un tout nouveau chapitre. Celui-ci est plus simple et rapide que les deux prochains, alors profitez encore un peu!
+
+Alors le Loss Given Default, ou taux de perte en cas de défaut, qu’est ce que c’est?
+
+Tout d’abord le LGD est connu comme étant un des trois indicateurs du risque de crédit de la réglementation de Bâle II.
+Il correspond à la perte en cas de défaut.
+
+next>
+title2>Qu'est-ce que le LGD?
+De manière standard le LGD est imposé par le régulateur (commission bancaire en France) soit directement, soit en imposant un organisme de notation tel que S&P’.
+
+La détermination du LGD demande la gestion et l’historisation de plus de 150 données mensuelles sur au moins 5 ans sur chaque crédit accordé.
+
+Il se calcule de la manière suivante: LGD= 1-R
+

@@ -11,6 +11,7 @@ public class Controller {
 	public Controller(Stage stage) {
 
 		Connexion connexion;
+		
 		try {
 			connexion = new Connexion("basel_training", "root", "");
 			SeConnecter seConnecter = new SeConnecter(stage, connexion);

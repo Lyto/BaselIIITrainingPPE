@@ -73,8 +73,10 @@ public class SeConnecter {
         
         // [Action On Button] Lancement de la page Home
         connexion_button.setOnAction((event) -> {
+        	String login = username.getText();
+        	String pwd = password.getText();
         	try {
-				if (connexion.authentification("YuuKii", "chocolat01")) {
+				if (connexion.authentification(login, pwd)) {
 					new Menu(connexion);
 					stage.close();
 				}
@@ -83,6 +85,7 @@ public class SeConnecter {
 				System.out.println("Erreur");
 			}
         });
+        
         
         // Scene & Stage
         
