@@ -44,7 +44,7 @@ Le PFE répond à la question :
 
 	 - Quelle est la pire perte qu’on peut avoir avec une certitude de 99%?
 
-Cela veut tout simplement dire que dans 99% des simulations, l’exposition ne dépassera par le PFE
+Cela veut tout simplement dire que dans 99% des simulations, l’exposition ne dépassera pas le PFE
 
 On prend en compte les expositions négatives pour l’intervalle de confiance.
 

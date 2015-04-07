@@ -79,25 +79,25 @@ Par exemple pour les taux d’échange, la modélisation se fait souvent par le mouv
 
 image>5/16.jpg
 
-	- (t) représente le drift instantané
-	- (t) représente la volatilité instantané
-	- (t) représente le processus de Wiener 
+	- mu(t) représente le drift instantané
+	- sigma(t) représente la volatilité instantané
+	- omega(t) représente le processus de Wiener 
 
 next>
 title3>Génération du scénario
 
 On remarque 2 paramètres importants dans la formule de Black & Scholes :
 
-Le paramètre (t) représente la tendance (le drift). Il s’agit de la médiane de la gaussienne à un instant t.
+Le paramètre mu(t) représente la tendance (le drift). Il s’agit de la médiane de la gaussienne à un instant t.
 
-Le paramètre (t) représente lui la volatilité du marché à un instant t. Il s’agit de l’écart type de la gaussienne à cet instant.
+Le paramètre sigma(t) représente lui la volatilité du marché à un instant t. Il s’agit de l’écart type de la gaussienne à cet instant.
 
 next>
 title3>Génération du scénario
 
 image>5/15.jpg
 
-A chaque instant, la courbe suit une tendance et est soumise à une volatilité , que l’on peut modéliser par une loi normale de médiane et d’écart type .
+A chaque instant, la courbe suit une tendance mu et est soumise à une volatilité sigma , que l’on peut modéliser par une loi normale de médiane mu et d’écart type sigma .
 
 next>
 title3>Evaluation des instruments
